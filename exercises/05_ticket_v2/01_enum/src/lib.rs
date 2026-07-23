@@ -1,16 +1,16 @@
 // TODO: use `Status` as type for `Ticket::status`
 //   Adjust the signature and implementation of all other methods as necessary.
 
-#[derive(Debug, PartialEq)]
 // `derive`s are recursive: it can only derive `PartialEq` if all fields also implement `PartialEq`.
 // Same holds for `Debug`. Do what you must with `Status` to make this work.
+#[derive(Debug, PartialEq, Clone)]
 struct Ticket {
     title: String,
     description: String,
     status: Status,
 }
 
-#[derive(Debug, PartialEq, Copy)]
+#[derive(Debug, PartialEq, Clone, Copy)]
 enum Status {
     ToDo,
     Done,
